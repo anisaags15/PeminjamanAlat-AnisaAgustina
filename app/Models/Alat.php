@@ -1,0 +1,20 @@
+<?php
+
+namespace App\Models;
+
+use Illuminate\Database\Eloquent\Model;
+
+class Alat extends Model
+{
+    protected $fillable = [
+        'kategori_id',
+        'nama_alat',
+        'stok',
+        'foto', // Tambahkan ini agar foto bisa tersimpan
+    ];
+
+    public function kategori()
+    {
+        return $this->belongsTo(Kategori::class);
+    }
+}
